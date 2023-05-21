@@ -15,7 +15,7 @@ public class Main {
         //turn the string into an array
         String numsArray[] = operands.split(" ");
 
-        System.out.println("Please enter the arithmetical symbol you would like to use ( + OR - OR  * OR /");
+        System.out.println("Please enter how you would like to calculate the two numbers ( + OR - OR  * OR /");
         //new String? and then check if newString == + or - or / or *
         String operationalValue = userInput.nextLine();
         //make some characters to hold places to compare the symbols to later
@@ -30,30 +30,35 @@ public class Main {
 
         // make a for loop for the number array to turn them into integers
         for (int i = 0; i < numsArray.length-1; i++) {
-            //set number array[i] to BigNumber1
-            num1 = BigDecimal.valueOf(numsArray[i]);
-            //make BigNumber2 = number array[i+1]
-            num2 = BigDecimal.valueOf(numsArray[i+1]);
-            //
+            //set number array[i] to num1
+            num1 = Double.parseDouble(numsArray[i]);
+            //turn num1 into a BigDecimal
+            BigDecimal a = new BigDecimal(num1);
+            //set numberArray[i+1] to num2
+            num2 = Double.parseDouble(numsArray[i + 1]);
+            //turn num2 into a BigDecimal
+            BigDecimal b = new BigDecimal(num2);
+                        
+
+            //make 4 if statements, 1 for each character, and then do the math
+            if (operationalValue.equals(plus)) {
+                BigDecimal sum = a.add(b);
+                System.out.println(num1 + " plus " + num2 + " equals " + sum);
+            }
+            if (operationalValue.equals(minus)) {
+                BigDecimal diff = a.subtract(b);
+                System.out.println(num1 + " minus " + num2 + " equals " + diff);
+            }
+            if (operationalValue.equals(multiply)) {
+                BigDecimal prod = a.multiply(b);
+                System.out.println(num1 + " multiplied by " + num2 + " equals " + prod);
+            }
+            if (operationalValue.equals(divide)) {
+                BigDecimal quo = a.divide(b);
+                System.out.println(num1 + " divided by " + num2 + " equals " + quo);
+            }
 
         }
-
-
-        //make 4 if statements, 1 for each character, and then do the math
-        if(operationalValue.equals(plus)){
-            System.out.println(num1 + " plus " + num2 + " equals " + (num1+num2));
-        }
-        if (operationalValue.equals(minus)){
-            System.out.println(num1 + " minus " + num2 + " equals " + (num1-num2));
-        }
-        if(operationalValue.equals(multiply)) {
-            System.out.println(num1 + " multiplied by " + num2 + " equals " + (num1*num2));
-        }
-        if(operationalValue.equals(divide)){
-            System.out.println(num1 + " divided by " + num2 + " equals " + (num1/num2));
-        }
-
-
 
     }
 }
