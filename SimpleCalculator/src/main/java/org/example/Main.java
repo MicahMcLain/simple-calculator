@@ -37,24 +37,25 @@ public class Main {
             num1 = Double.parseDouble(numsArray[i]);
             //set numberArray[i+1] to num2
             num2 = Double.parseDouble(numsArray[i + 1]);
-            }
 
-        //make 4 if statements, 1 for each character, and then do the math
-        if (operationalValue.equals(plus)) {
-            BigDecimal sum = a.add(b);
-            System.out.println(num1 + " plus " + num2 + " equals " + sum);
-        }
-        if (operationalValue.equals(minus)) {
-            BigDecimal diff = a.subtract(b);
-            System.out.println(num1 + " minus " + num2 + " equals " + diff);
-        }
-        if (operationalValue.equals(multiply)) {
-            BigDecimal prod = a.multiply(b);
-            System.out.println(num1 + " multiplied by " + num2 + " equals " + prod);
-        }
-        if (operationalValue.equals(divide)) {
-            BigDecimal quo = a.divide(b);
-            System.out.println(num1 + " divided by " + num2 + " equals " + quo);
+
+            //make 4 if statements, 1 for each character, and then do the math
+            if (operationalValue.equals("+")) {
+                BigDecimal sum = a.add(b);
+                System.out.println(num1 + " plus " + num2 + " equals " + sum);
+            }
+            if (operationalValue.equals("-")) {
+                BigDecimal diff = a.subtract(b);
+                System.out.println(num1 + " minus " + num2 + " equals " + diff);
+            }
+            if (operationalValue.equals("*")) {
+                BigDecimal prod = a.multiply(b);
+                System.out.println(num1 + " multiplied by " + num2 + " equals " + prod);
+            }
+            if (operationalValue.equals("/")) {
+                BigDecimal quo = a.divide(b);
+                System.out.println(num1 + " divided by " + num2 + " equals " + quo);
+            }
         }
     }
 }
