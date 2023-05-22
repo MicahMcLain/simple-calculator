@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //make a new scanner
-        Scanner userInput = new Scanner (System.in);
+        Scanner userInput = new Scanner(System.in);
         //ask the user for 2 numbers separated by spaces
         System.out.println("Please enter the two operands separated by spaces:");
         //return the entered data as a string
@@ -27,38 +27,34 @@ public class Main {
         //make some doubles to convert to big decimals later
         double num1 = 0;
         double num2 = 0;
+        //turn numbers into BigDecimals
+        BigDecimal a = new BigDecimal(num1);
+        BigDecimal b = new BigDecimal(num2);
 
         // make a for loop for the number array to turn them into integers
-        for (int i = 0; i < numsArray.length-1; i++) {
+        for (int i = 0; i < numsArray.length - 1; i++) {
             //set number array[i] to num1
             num1 = Double.parseDouble(numsArray[i]);
-            //turn num1 into a BigDecimal
-            BigDecimal a = new BigDecimal(num1);
             //set numberArray[i+1] to num2
             num2 = Double.parseDouble(numsArray[i + 1]);
-            //turn num2 into a BigDecimal
-            BigDecimal b = new BigDecimal(num2);
-                        
-
-            //make 4 if statements, 1 for each character, and then do the math
-            if (operationalValue.equals(plus)) {
-                BigDecimal sum = a.add(b);
-                System.out.println(num1 + " plus " + num2 + " equals " + sum);
-            }
-            if (operationalValue.equals(minus)) {
-                BigDecimal diff = a.subtract(b);
-                System.out.println(num1 + " minus " + num2 + " equals " + diff);
-            }
-            if (operationalValue.equals(multiply)) {
-                BigDecimal prod = a.multiply(b);
-                System.out.println(num1 + " multiplied by " + num2 + " equals " + prod);
-            }
-            if (operationalValue.equals(divide)) {
-                BigDecimal quo = a.divide(b);
-                System.out.println(num1 + " divided by " + num2 + " equals " + quo);
             }
 
+        //make 4 if statements, 1 for each character, and then do the math
+        if (operationalValue.equals(plus)) {
+            BigDecimal sum = a.add(b);
+            System.out.println(num1 + " plus " + num2 + " equals " + sum);
         }
-
+        if (operationalValue.equals(minus)) {
+            BigDecimal diff = a.subtract(b);
+            System.out.println(num1 + " minus " + num2 + " equals " + diff);
+        }
+        if (operationalValue.equals(multiply)) {
+            BigDecimal prod = a.multiply(b);
+            System.out.println(num1 + " multiplied by " + num2 + " equals " + prod);
+        }
+        if (operationalValue.equals(divide)) {
+            BigDecimal quo = a.divide(b);
+            System.out.println(num1 + " divided by " + num2 + " equals " + quo);
+        }
     }
 }
