@@ -1,7 +1,6 @@
 package org.example;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -13,16 +12,11 @@ public class Main {
         //return the entered data as a string
         String operands = userInput.nextLine();
         //turn the string into an array
-        String numsArray[] = operands.split(" ");
+        String[] numsArray = operands.split(" ");
 
         System.out.println("Please enter how you would like to calculate the two numbers ( + OR - OR  * OR /");
         //new String? and then check if newString == + or - or / or *
         String operationalValue = userInput.nextLine();
-        //make some characters to hold places to compare the symbols to later
-        char plus = '+';
-        char minus = '-';
-        char divide = '/';
-        char multiply = '*';
 
         //make some doubles to convert to big decimals later
         double num1 = 0;
